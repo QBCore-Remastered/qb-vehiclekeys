@@ -3,6 +3,54 @@
 # qbx_vehiclekeys
 An advanced customizable vehicle key system for the Qbox framework
 
+#Docs [ For Lockpick ]
+
+
+Remove Those Given Lines from OX-Inventory > Data > Items.lua 
+```
+	['lockpick'] = {
+		label = 'Lockpick',
+		weight = 160,
+	},
+```
+Add Those New Lines  ::
+```
+	['lockpick'] = {
+		name = 'lockpick',
+		label = 'Lockpick',
+		weight = 50,
+		type = 'item',
+		image = 'lockpick.png',
+		unique = false,
+		useable = true,
+		shouldClose = true,
+		combinable = nil,
+		description = 'For picking locks',
+		client = {
+			event = 'lockpicks:UseLockpick',
+			args = false -- for regular lockpick
+		}
+	},
+	['advancedlockpick'] = {
+		name = 'advancedlockpick', 
+		label = 'Advanced Lockpick',
+		weight = 150,
+		type = 'item',
+		image = 'advancedlockpick.png',
+		unique = false,
+		useable = true,
+		shouldClose = true,
+		combinable = nil,
+		description = 'For picking more secure locks',
+		client = {
+			event = 'lockpicks:UseLockpick',
+			args = true -- for advanced lockpick
+		}
+	},
+```
+You need to add this 2 Items on OX-Inventory > Data > Items.lua 
+Remove Old Lines If you want lockpick and Advanced Lockpick will Work Perfectly !
+
 # Features
 
 ## Backwards Compatibility with qb-vehiclekeys
